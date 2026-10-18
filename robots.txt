@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://mertocak.com/sitemap.xml
