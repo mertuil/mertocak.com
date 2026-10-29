@@ -320,6 +320,10 @@ h1.name{margin:0;display:flex;flex-direction:column;gap:12px}
 .box .tp{font:500 10.5px/1.2 var(--mono);letter-spacing:.11em;text-transform:uppercase;color:var(--amber)}
 .box h4{margin:0;font:500 16px/1.4 var(--sans)}
 .box p{margin:0;font:400 12px/1.55 var(--mono);color:var(--dim);overflow-wrap:anywhere}
+.box .bx-s{font:400 13.5px/1.5 var(--sans)}
+.box .bx-l{display:flex;flex-wrap:wrap;gap:4px 16px;margin-top:4px}
+.box .bx-l a{color:var(--amber);text-decoration:none;border-bottom:1px solid var(--line-2)}
+.box .bx-l a:hover{border-color:var(--amber)}
 .svc{list-style:none;margin:0;padding:0;border-top:1px solid var(--line)}
 .svc li{padding:10px 0;border-bottom:1px solid var(--line);font-size:14.5px;line-height:1.45}
 
@@ -592,6 +596,7 @@ h1.name{margin:0;display:flex;flex-direction:column;gap:12px}
       <div class="proj-grid">
         <div class="pmain"><div id="pfeat"></div><ul class="plist" id="plist"></ul></div>
         <div class="side">
+          <div><h3 data-i18n="oer.h">Açık eğitim kaynağı</h3><div class="boxes" id="oer"></div></div>
           <div><h3 data-i18n="pat.h">Patent ve faydalı model</h3><div class="boxes" id="patents"></div></div>
           <div><h3 data-i18n="svc.h">Akademik hizmet</h3><ul class="svc" id="svc"></ul></div>
         </div>
@@ -706,7 +711,7 @@ tr: {
   'ix.Hakemli':'Hakemli','ix.Özet':'Özet','ix.Tam metin':'Tam metin',
   'pubs.note':'Kaynak: AVESİS özgeçmişi, 8 Ekim 2026. Tekrarlanan kayıtlar ve bir düzeltme notu birleştirildi; AVESİS\'e henüz girilmemiş ISCAA 2026 sunumu eklendi. Dergi eklerinde yayımlanan kongre özetleri bildiriler arasında gösterilir. DOI bağlantıları PubMed ve Crossref ile eşleştirildi; DOI\'si olmayan kayıtlar Google Akademik aramasına bağlanır.',
   'proj.h':'Projeler ve fikri mülkiyet','proj.k':'TÜBİTAK · BAP · Ulusal Ajans','role.pi':'Yürütücü','role.res':'Araştırmacı','role.fel':'Doktora sonrası bursiyer',
-  'pf.kicker':'TÜBİTAK 2219 · Yurt dışı doktora sonrası araştırma','pat.h':'Patent ve faydalı model','svc.h':'Akademik hizmet',
+  'pf.kicker':'TÜBİTAK 2219 · Yurt dışı doktora sonrası araştırma','oer.h':'Açık eğitim kaynağı','pat.h':'Patent ve faydalı model','svc.h':'Akademik hizmet',
   'cv.h':'Özgeçmiş','th.h':'Tez danışmanlığı','courses.h':'Verdiği dersler',
   'contact.h':'İletişim','contact.k':'Ankara · Türkiye','contact.big':'İş birliği, ortak proje ve mikro-BT analizleri için yazabilirsiniz.',
   'c.email':'E-posta','c.phone':'Telefon','c.addr':'Adres','c.addr.v':'Ankara Üniversitesi Diş Hekimliği Fakültesi, Temel Tıp Bilimleri Bölümü, Ankara',
@@ -743,7 +748,7 @@ en: {
   'ix.Hakemli':'Peer-reviewed','ix.Özet':'Abstract','ix.Tam metin':'Full text',
   'pubs.note':'Source: AVESİS CV, 8 October 2026. Duplicate records and one correction notice were merged; the ISCAA 2026 talk, not yet in AVESİS, was added. Congress abstracts published in journal supplements are listed as conference papers. DOI links were matched through PubMed and Crossref; records without a DOI link to a Google Scholar search.',
   'proj.h':'Projects and intellectual property','proj.k':'TÜBİTAK · University · National Agency','role.pi':'Principal investigator','role.res':'Researcher','role.fel':'Postdoctoral fellow',
-  'pf.kicker':'TÜBİTAK 2219 · International postdoctoral research fellowship','pat.h':'Patent and utility model','svc.h':'Academic service',
+  'pf.kicker':'TÜBİTAK 2219 · International postdoctoral research fellowship','oer.h':'Open educational resource','pat.h':'Patent and utility model','svc.h':'Academic service',
   'cv.h':'Curriculum vitae','th.h':'Thesis supervision','courses.h':'Courses taught',
   'contact.h':'Contact','contact.k':'Ankara · Türkiye','contact.big':'Get in touch about collaborations, joint projects or micro-CT studies.',
   'c.email':'Email','c.phone':'Phone','c.addr':'Address','c.addr.v':'Ankara University, Faculty of Dentistry, Department of Basic Medical Sciences, Ankara, Türkiye',
@@ -820,6 +825,9 @@ const PROJECTS = [
   {f:'BAP', y:'2018–', tr:'Furkasyon perforasyonu tedavisinde kullanılan biyomateryallerin dolgu kalitelerinin değerlendirilmesi', en:'Filling quality of biomaterials used to repair furcal perforations'},
   {f:'Kurum projesi', fe:'Institutional', y:'2018–2019', tr:'Yeni bir yöntemle uygulanan kök ucu dolgularının push-out bağlantı direnci ve dolgu kalitesi', en:'Push-out bond strength and filling quality of root-end fillings placed with a new technique'},
   {f:'Özel kurum', fe:'Private institution', y:'2015–2016', tr:'Posterolateral füzyonda yeni bir biyomalzeme: karbon nanotüp ve trikalsiyum fosfat kompoziti, rat modeli', en:'A new biomaterial for posterolateral fusion: carbon nanotube and tricalcium phosphate composite in a rat model'}
+];
+const RESOURCES = [
+  {tp:{tr:'Etkileşimli 3B atlas · 2026', en:'Interactive 3D atlas · 2026'}, tr:'Baş-Boyun Anatomi Atlası', en:'Head and Neck Anatomy Atlas', d:{tr:'Türkçe ve Latince terimlerle; model, MR ve KIBT kesitleri, 324 yapı kartı.', en:'In Turkish with Latin terms; model, MR and CBCT sections, 324 structure cards.'}, url:'https://atlas.mertocak.com/', doi:''}
 ];
 const PATENTS = [
   {tp:{tr:'Faydalı model · tescil 2026', en:'Utility model · registered 2026'}, tr:'Anatomik cerrahi sütür, ligatür ve anastomoz eğitim seti', en:'Anatomical training set for surgical suture, ligature and anastomosis', no:'TR 2020/11063 · Ocak M.'},
@@ -1053,6 +1061,7 @@ function renderFacts(){
 function renderProjects(){
   $('#pfeat').innerHTML = PROJECTS.filter(p => p.feat).map(p => '<article class="pfeat"><div class="pf-top"><span class="fund">' + esc(t('pf.kicker')) + '</span><span class="pf-role">' + esc(t('role.' + p.r)) + '</span></div><h3>' + esc(p[lang]) + '</h3><p>' + esc(p.host[lang]) + '</p><span class="yy">' + esc(p.y) + '</span></article>').join('');
   $('#plist').innerHTML = PROJECTS.filter(p => !p.feat).map(p => '<li><span class="yy">' + esc(p.y) + '</span><div><div class="ff"><span class="fund">' + esc(lang === 'en' && p.fe ? p.fe : (lang === 'en' && p.f === 'BAP' ? 'University (BAP)' : p.f)) + '</span>' + (p.r ? '<span class="role">' + esc(t('role.' + p.r)) + '</span>' : '') + '</div><p>' + esc(p[lang]) + '</p></div></li>').join('');
+  $('#oer').innerHTML = RESOURCES.map(r => '<div class="box"><span class="tp">' + esc(r.tp[lang]) + '</span><h4>' + esc(r[lang]) + '</h4><p class="bx-s">' + esc(r.d[lang]) + '</p><p class="bx-l"><a href="' + r.url + '" target="_blank" rel="noopener">' + esc(r.url.replace(/^https:\/\//, '').replace(/\/$/, '')) + ' ↗</a>' + (r.doi ? '<a href="https://doi.org/' + r.doi + '" target="_blank" rel="noopener">DOI ' + esc(r.doi) + '</a>' : '') + '</p></div>').join('');
   $('#patents').innerHTML = PATENTS.map(p => '<div class="box"><span class="tp">' + esc(p.tp[lang]) + '</span><h4>' + esc(p[lang]) + '</h4><p>' + esc(p.no) + '</p></div>').join('');
   $('#svc').innerHTML = SERVICE.map(s => '<li>' + esc(s[lang]) + '</li>').join('');
 }
