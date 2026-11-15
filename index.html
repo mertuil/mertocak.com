@@ -583,7 +583,7 @@ h1.name{margin:0;display:flex;flex-direction:column;gap:12px}
     </div>
   </section>
 
-  <section class="sec" id="fea" aria-labelledby="h-fea">
+  <section class="sec" id="fea" data-nav="arastirma" aria-labelledby="h-fea">
     <div class="wrap">
       <div class="sec-head"><h2 id="h-fea" data-i18n="fea.h">Sonlu elemanlar analizi</h2><span class="kicker">FreeCAD FEM · Gmsh · CalculiX</span></div>
       <p class="intro" data-i18n="fea.intro">Mandibulada ısırma ve kas yüklerinin oluşturduğu gerilmeler sonlu elemanlar yöntemiyle hesaplanıyor. Kayıtlar, açık kaynaklı FreeCAD FEM, Gmsh ve CalculiX ile kurulan bir gösterim modeline aittir.</p>
@@ -1272,7 +1272,7 @@ const setHdr = () => root.style.setProperty('--hdr', hdr.offsetHeight + 'px');
 const menuBtn = $('#menu-btn');
 function updMenuLabel(){ menuBtn.setAttribute('aria-label', t(hdr.classList.contains('open') ? 'menu.close' : 'menu.open')); }
 function setMenu(open){ hdr.classList.toggle('open', open); menuBtn.setAttribute('aria-expanded', open ? 'true' : 'false'); updMenuLabel(); }
-menuBtn.addEventListener('click', e => { e.stopPropagation(); setMenu(!hdr.classList.contains('open')); });
+menuBtn.addEventListener('click', e => { e.stopPropagation(); const o = !hdr.classList.contains('open'); setMenu(o); if (o){ const a = $('#nav a'); if (a) a.focus({preventScroll: true}); } });
 $('#nav').addEventListener('click', e => { if (e.target.closest('a') && hdr.classList.contains('open')){ setMenu(false); setHdr(); } });
 document.addEventListener('click', e => { if (hdr.classList.contains('open') && !hdr.contains(e.target)) setMenu(false); });
 document.addEventListener('keydown', e => { if (e.key === 'Escape' && hdr.classList.contains('open')){ setMenu(false); menuBtn.focus(); } });
@@ -1309,7 +1309,7 @@ if ('IntersectionObserver' in window){
   const io = new IntersectionObserver(es => {
     es.forEach(en => {
       if (en.isIntersecting){
-        links.forEach(a => a.setAttribute('aria-current', a.getAttribute('href') === '#' + en.target.id ? 'true' : 'false'));
+        links.forEach(a => a.setAttribute('aria-current', a.getAttribute('href') === '#' + (en.target.dataset.nav || en.target.id) ? 'true' : 'false'));
       }
     });
   }, {rootMargin: '-45% 0px -50% 0px'});
