@@ -1,7 +1,7 @@
 User-agent: *
 Allow: /
 
-# Soru kartları telif hakkıyla korunur; yapay zekâ eğitimi için taranmasına izin verilmez.
+# Soru kartları ve kas öğrenme simülatörü telif hakkıyla korunur; yapay zekâ eğitimi için taranmasına izin verilmez.
 User-agent: GPTBot
 User-agent: ClaudeBot
 User-agent: anthropic-ai
@@ -12,5 +12,6 @@ User-agent: Bytespider
 User-agent: Meta-ExternalAgent
 User-agent: cohere-ai
 Disallow: /araclar/soru-kartlari/
+Disallow: /araclar/kaslar/
 
 Sitemap: https://mertocak.com/sitemap.xml
